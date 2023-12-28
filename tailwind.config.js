@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./pages/**/*.{ts,tsx}",
+    "index.html",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
@@ -70,6 +71,40 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      // my configs
+      textColor: {
+        primary: "var(--text-primary)",
+        secondary: "var(--text-secondary)",
+        "icon-1": "var(--icon-1)",
+        "icon-2": "var(--icon-2)",
+        // "accent": "var(--accent)"
+      },
+      stroke: {
+        "icon-1": "var(--icon-1)",
+        "icon-2": "var(--icon-2)",
+      },
+      backgroundColor: {
+        accent: "#5E43C2",
+        primary: "hsl(var(--background))",
+        secondary: "var(--background-secondary)",
+        "surface-1": "var(--surface-1)",
+        "surface-2": "var(--surface-2)",
+      },
+      borderColor: {
+        primary: "var(--border-primary)",
+        // accent: "#5E43C2",
+        accent: "hsl(var(--accent))",
+        secondary: "var(--border-secondary)",
+      },
+      fontSize: {
+        12: "12px",
+        13: "13px",
+        14: "14px",
+        16: "16px",
+        18: "18px",
+        20: "20px",
+        24: "24px",
       },
     },
   },
