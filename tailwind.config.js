@@ -85,7 +85,7 @@ export default {
         "icon-2": "var(--icon-2)",
       },
       backgroundColor: {
-        accent: "#5E43C2",
+        accent: "hsl(var(--accent))",
         primary: "hsl(var(--background))",
         secondary: "var(--background-secondary)",
         "surface-1": "var(--surface-1)",

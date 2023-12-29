@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Layout, Package } from "lucide-react";
 import noise from "../assets/noise-01.png";
 import pic1 from "../assets/carousel/pic-1.png";
 import pic2 from "../assets/carousel/pic-2.jpg";
@@ -176,14 +176,118 @@ function Skills() {
         <div className="flex flex-col items-center">
           <HeaderPill text="Skills" />
 
-          <h3 className="h3 mt-3 text-white text-slate-950 ">Skillset</h3>
+          <h3 className="h3 mt-3 text-white">Skillset</h3>
         </div>
 
         <div className="py-5 flex justify-center gap-2 flex-wrap mb-5">
-          <SkillsPill text="Web Develpoment" />
+          <SkillsPill text="Web Development" />
           <SkillsPill text="Graphic Design: Flyers" />
           <SkillsPill text="Graphic Design: Packaging" />
           <SkillsPill text="3D: Blender" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// function AboutMe() {
+//   return (
+//     <div className="overflow-y-hidden  relative" id="aboutme-section">
+//       <div className="wrapper p-4 container-4xl">
+//         <img
+//           src={noise}
+//           alt="noise-img"
+//           className="absolute inset-0 w-full h-full object-fill object-center opacity-5 z-[-1]"
+//         />
+
+//         <div className="flex flex-col items-center">
+//           <HeaderPill text="About me" />
+//           <h3 className="h3 mt-3 dark:text-white text-slate-950 ">Who am I?</h3>
+//         </div>
+
+//         <div className="about-card-wrapper">
+//           <div className="border border-red-500 grid place-items-center h-[500px]">
+//             <div className="p-[150px] bg-blue-500">Hello</div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+type ServiceGroup = {
+  icon: React.ReactNode;
+  header: string;
+  description: string;
+};
+
+function ServiceTextGroup({ header, description, icon }: ServiceGroup) {
+  return (
+    <div className="service-text-group shrink-0 w-full">
+      <div className="">
+        <div className="flex gap-1 items-center">
+          <div className="text-accent">{icon}</div>
+          <h3 className="h3 text-secondary">{header}</h3>
+        </div>
+        <div className="line h-[1px] bg-accent w-full rounded-full mb-2 shrink-0"></div>
+
+        <div className="shrink-0">
+          <p>{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Services() {
+  return (
+    <div className="overflow-y-hidden  relative" id="services-section">
+      <div className="wrapper p-4 container-4xl">
+        <img
+          src={noise}
+          alt="noise-img"
+          className="absolute inset-0 w-full h-full object-fill object-center opacity-5 z-[-1]"
+        />
+
+        <div className="flex flex-col items-center" id="services-header">
+          <HeaderPill text="Services" />
+
+          <h3 className="h3 mt-5 dark:text-white text-slate-950 ">
+            Services I Offer
+          </h3>
+          <p className="">
+            I guarantee you nothing but quality work within agreed deadlines.
+          </p>
+        </div>
+
+        <div className="mt-[60px] max-w-[400px] mx-auto flex flex-col items-center gap-5">
+          <ServiceTextGroup
+            header="Web Development"
+            icon={<Package size={20} />}
+            description="If you need any service with web development, then you've come to
+              the right place: this includes coding, deployment and hosting, custom domain 
+              integrations and anything related"
+          />
+          <ServiceTextGroup
+            header="Web Design"
+            icon={<Layout size={20} />}
+            description="Design new or re design existing websites"
+          />
+          <ServiceTextGroup
+            header="Graphic Design"
+            icon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                className="fill-accent"
+              >
+                <path d="m21.79 17.06-5.55-5.55 1.57-1.57-3.75-3.75-1.57 1.57-5.55-5.55-4.73 4.73 5.55 5.55L3 17.25V21h3.75l4.76-4.76 5.55 5.55 4.73-4.73zM9.18 11.07 5.04 6.94l1.9-1.9 1.27 1.27L7.02 7.5l1.41 1.41 1.19-1.19 1.45 1.45-1.89 1.9zm3.75 3.75 1.9-1.9 1.45 1.45-1.19 1.19 1.41 1.41 1.19-1.19 1.27 1.27-1.9 1.9-4.13-4.13zm2.203-9.697 2.538-2.539 3.748 3.748-2.538 2.539z" />
+              </svg>
+            }
+            description="I also offer supporting graphic design services including simple logo designs and illustration"
+          />
         </div>
       </div>
     </div>
@@ -197,6 +301,8 @@ export default function Home() {
       <Intro />
       <Showcase />
       <Skills />
+      {/* <AboutMe /> */}
+      <Services />
     </div>
   );
 }

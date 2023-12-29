@@ -166,7 +166,7 @@ body {
 }
 
 #intro-text-group {
-  background-image: url(./assets/gradient-grid-square.png);
+  background-image: url(./assets/gradient-grid-square.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -178,7 +178,27 @@ body {
   border-image-slice: 1;
 }
 
+#aboutme-section {
+  background: radial-gradient(49.39% 41.47% at 98.78% 0%, rgba(81, 105, 233, 0.19) 0%, rgba(11, 131, 59, 0.03) 100%), radial-gradient(592.16% 94.14% at 98.78% 0%, rgba(34, 97, 218, 0.17) 0%, rgba(56, 160, 98, 0.00) 100%);
+  border: 1px solid;
+  border-image: linear-gradient(to left, rgb(57, 110, 234), rgba(64, 195, 53, 0));
+  border-image-slice: 1;
+}
+
 #skills-section {
   background-image: url(./assets/bg-graphic.png);
   background-position: center center;
+}
+
+#card-grid {
+  background-image: url(./assets/grid-lines.png);
+  background-position: center center;
+  background-color: transparent;
+}
+
+#services-header{
+  background-image: url(./assets/gradient-grid.svg);
+  background-position: center center;
+  background-size:300px;
+  background-repeat: no-repeat;
 }

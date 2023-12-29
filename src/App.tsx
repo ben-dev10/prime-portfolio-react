@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 function App() {
   return (
     <>
-      <header className="p-4 sticky top-0 border-b bg-background/80 backdrop-blur-[8px] z-[999]">
+      <header className="p-4 sticky top-0 border-b bg-background/80 backdrop-blur-[8px] z-[40]">
         <Header />
       </header>
 

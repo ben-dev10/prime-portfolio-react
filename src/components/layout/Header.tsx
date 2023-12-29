@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layers3, Sun } from "lucide-react";
-// import logo from "/logo.svg";
-// import Sheet from "../ui/Sheet";
+import { SheetUI } from "../ui-2/sheetui";
 
 // Updates theme
 document.addEventListener("DOMContentLoaded", function () {
@@ -23,7 +22,7 @@ function Logo() {
 
 function Links() {
   return (
-    <div className="space-x-3 text-slate-50 hidden md:block">
+    <div className="space-x-3 dark:text-slate-50 hidden md:block">
       <Link to={"/"} className="hover:underline">
         Home
       </Link>
@@ -54,49 +53,9 @@ function ThemeToggle() {
 }
 
 function MenuIcon() {
-  // function handleBodyStylesAndSheetVisibility() {
-  //   document.getElementById("sheet").classList.toggle("hidden");
-  //   document.body.classList.toggle("overflow-hidden");
-  // }
-
   return (
     <div className="md:hidden">
-      <div
-        id="menu-icon"
-        // onClick={handleBodyStylesAndSheetVisibility}
-        className="cursor-pointer"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
-        >
-          <path
-            d="M3 9H10.2188"
-            stroke="#94A3B8"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M3 4.5H15"
-            stroke="#94A3B8"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M3 13.5H12.75"
-            stroke="#94A3B8"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
-      {/* <Sheet /> */}
+      <SheetUI />
     </div>
   );
 }
