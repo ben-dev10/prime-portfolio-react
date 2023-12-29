@@ -23,7 +23,7 @@ function Logo() {
 
 function Links() {
   return (
-    <div className="space-x-3 text-slate-50 hidden">
+    <div className="space-x-3 text-slate-50 hidden md:block">
       <Link to={"/"} className="hover:underline">
         Home
       </Link>
