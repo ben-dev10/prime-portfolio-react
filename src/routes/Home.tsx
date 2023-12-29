@@ -159,12 +159,44 @@ function Showcase() {
   );
 }
 
+type SkillsPillType = { text: string };
+
+function SkillsPill({ text }: SkillsPillType) {
+  return (
+    <div className="bg-[rgba(64,195,53,.5)] rounded-full max-w-max px-3 py-1 border border-accent text-white">
+      {text}
+    </div>
+  );
+}
+
+function Skills() {
+  return (
+    <div className="" id="skills-section">
+      <div className="wrapper container-4xl p-4">
+        <div className="flex flex-col items-center">
+          <HeaderPill text="Skills" />
+
+          <h3 className="h3 mt-3 text-white text-slate-950 ">Skillset</h3>
+        </div>
+
+        <div className="py-5 flex justify-center gap-2 flex-wrap mb-5">
+          <SkillsPill text="Web Develpoment" />
+          <SkillsPill text="Graphic Design: Flyers" />
+          <SkillsPill text="Graphic Design: Packaging" />
+          <SkillsPill text="3D: Blender" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="">
       <Hero />
       <Intro />
       <Showcase />
+      <Skills />
     </div>
   );
 }
