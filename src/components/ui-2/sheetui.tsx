@@ -46,7 +46,7 @@ export function SheetUI() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-full md:max-w-full">
-          <div className="links gap-1 mb-10 flex flex-col">
+          <div className="links gap-3 mb-10 flex flex-col">
             <SheetClose className="" asChild>
               <Link to="/about" className="sheet-link">
                 About
@@ -61,9 +61,7 @@ export function SheetUI() {
           </div>
 
           <SheetFooter>
-            <SheetClose asChild>
-              <Button type="submit">Save changes</Button>
-            </SheetClose>
+           
           </SheetFooter>
         </SheetContent>
       </Sheet>

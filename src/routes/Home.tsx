@@ -5,6 +5,8 @@ import pic1 from "../assets/carousel/pic-1.png";
 import pic2 from "../assets/carousel/pic-2.jpg";
 import pic3 from "../assets/carousel/pic-3.jpg";
 
+import FormUI from "../components/ui-2/formui.tsx"
+
 function Hero() {
   return (
     <div className="hero-section h-[50vh]" id="hero-wrapper">
@@ -229,9 +231,9 @@ function ServiceTextGroup({ header, description, icon }: ServiceGroup) {
           <div className="text-accent">{icon}</div>
           <h3 className="h3 text-secondary">{header}</h3>
         </div>
-        <div className="line h-[1px] bg-accent w-full rounded-full mb-2 shrink-0"></div>
+        <div className="line h-[1px] bg-accent w-full rounded-full mb-2"></div>
 
-        <div className="shrink-0">
+        <div className="">
           <p>{description}</p>
         </div>
       </div>
@@ -241,8 +243,8 @@ function ServiceTextGroup({ header, description, icon }: ServiceGroup) {
 
 function Services() {
   return (
-    <div className="overflow-y-hidden  relative" id="services-section">
-      <div className="wrapper p-4 container-4xl">
+    <div className="overflow-y-hidden  relative " id="services-section">
+      <div className="wrapper p-4 container-4xl pb-[60px] md:pb-[150px]">
         <img
           src={noise}
           alt="noise-img"
@@ -278,8 +280,8 @@ function Services() {
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="21"
+                height="21"
                 viewBox="0 0 24 24"
                 className="fill-accent"
               >
@@ -288,6 +290,27 @@ function Services() {
             }
             description="I also offer supporting graphic design services including simple logo designs and illustration"
           />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Contact() {
+  return (
+    <div className="bg-[rgba(64,195,53,.12)] border-t border-b border-[rgba(64,195,53,.9)] md:h-[200px]">
+      <div className="wrapper container-4xl p-4">
+        <div className="md:flex md:mx-auto md:max-w-max md:gap-[60px]">
+          <div className="texts">
+            <div className="flex md:flex-col">
+              <h1 className="h1 text-secondary">Ready?</h1>
+              <h1 className="h1 text-secondary ml-1">Let's Talk</h1>
+            </div>
+            <p className="md:w-[200px]">Send me a mail and I'll get back to you as soon as possible</p>
+          </div>
+          <div className="contact-card">
+            <FormUI />
+          </div>
         </div>
       </div>
     </div>
@@ -303,6 +326,7 @@ export default function Home() {
       <Skills />
       {/* <AboutMe /> */}
       <Services />
+      <Contact />
     </div>
   );
 }

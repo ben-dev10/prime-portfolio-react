@@ -25,7 +25,7 @@
     --muted-foreground: 215.4 16.3% 46.9%;
 
     /* --accent: 210 40% 96.1%; */
-    /* --accent: rgb(64, 195, 53), */
+    /* --accent: rgba(64, 195, 53, .5), */
     /* accent: #40C335, */
     --accent: 115, 57%, 49%;
     --accent-foreground: 222.2 47.4% 11.2%;
@@ -201,4 +201,8 @@ body {
   background-position: center center;
   background-size:300px;
   background-repeat: no-repeat;
+}
+
+@media (prefers-color-scheme:dark){
+  
 }
