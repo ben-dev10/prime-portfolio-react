@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Bookmark, Layers } from "lucide-react";
 
 export function SheetUI() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(false);
   };
