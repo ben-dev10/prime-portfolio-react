@@ -5,10 +5,10 @@ import avatar from "../../assets/carousel/pic-2.jpg";
 
 const FormUI = () => (
   <FormRoot
-    className="w-full md:w-[350px] border my-5 rounded-[10px] dark:bg-[#0c0d0d] bg-slate-200 md:translate-y-[-32%]"
+    className="w-full md:w-[350px] border dark:border-slate-700 border-slate-300 my-5 rounded-[10px] dark:bg-[#0c0d0d] bg-slate-200 md:translate-y-[-32%]"
     onSubmit={(e) => {
       e.preventDefault();
-      alert("Thanks,we'll get in touch.");
+      alert("Thanks, we will get in touch.");
     }}
   >
     <div className="form-header p-4 flex gap-4 pt-6">
@@ -16,7 +16,7 @@ const FormUI = () => (
         <img
           src={avatar}
           alt="avatar"
-          className=" avatar size-[32px] rounded-full border-2 border-blue-100 shadow-md"
+          className=" avatar size-[40px] rounded-full border-2 border-blue-100 shadow-md"
         />
         <div className="dot size-2 bg-accent rounded-full absolute bottom-[12px] right-0"></div>
       </div>
@@ -33,7 +33,7 @@ const FormUI = () => (
         <FormMessage match="typeMismatch">Please provide a name</FormMessage>
       </Flex>
       <Form.Control asChild>
-        <Input type="text" required />
+        <Input type="text" required className="form-input " />
       </Form.Control>
     </FormField>
 
@@ -46,11 +46,11 @@ const FormUI = () => (
         </FormMessage>
       </Flex>
       <Form.Control asChild>
-        <Input type="email" required />
+        <Input type="email" required className="form-input" />
       </Form.Control>
     </FormField>
 
-    <FormField name="service" className="mb-5">
+    <FormField name="service" className="mb-10">
       <Flex css={{ alignItems: "baseline", justifyContent: "space-between" }}>
         <FormLabel>Service required</FormLabel>
         <FormMessage match="valueMissing">
@@ -61,7 +61,7 @@ const FormUI = () => (
         </FormMessage>
       </Flex>
       <Form.Control asChild>
-        <Input type="text" required />
+        <Input type="text" required className="form-input" />
       </Form.Control>
     </FormField>
 
@@ -84,8 +84,9 @@ const FormField = styled(Form.Field, {
 const FormLabel = styled(Form.Label, {
   fontSize: 12,
   fontWeight: 500,
-  lineHeight: "35px",
+  lineHeight: "15px",
   color: "var(--accent)",
+  marginTop: 10,
 });
 
 const FormMessage = styled(Form.Message, {
@@ -97,22 +98,12 @@ const FormMessage = styled(Form.Message, {
 const Flex = styled("div", { display: "flex" });
 
 const inputStyles = {
-  all: "unset",
-  color: "#71717a",
-  borderBottom: "1px solid #3f3f46",
-  boxSizing: "border-box",
+  // all: "unset",
   width: "100%",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  outline: "0px",
   fontSize: 12,
-  // backgroundColor: " !important",
-  // boxShadow: "0 0 0 1px rgba(94,67,194,.5)",
-  "&:hover": { borderBottomColor: "rgba(64, 195, 53, .5)" },
-  "&:focus": { borderBottomColor: "rgba(64, 195, 53, .8)" },
-  "&::selection": { backgroundColor: "rgba(64, 195, 53, .5)", color: "white" },
-  "@media (prefers-color-scheme:dark)": {},
 };
 
 const Input = styled("input", {

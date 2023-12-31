@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { Layers3, Sun } from "lucide-react";
+import { Download, Layers3, Sun } from "lucide-react";
 import { SheetUI } from "../ui-2/sheetui";
+import { Button } from "../ui/button";
+import cv from "../../assets/resume/resume-v1.pdf";
 
 // Updates theme
 document.addEventListener("DOMContentLoaded", function () {
-  const savedTheme = localStorage.getItem("portfolio-theme") || "light";
+  const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
   // remove any "dark" or "light" class before applying new theme
   document.documentElement.classList.remove("dark", "light");
   document.documentElement.classList.add(savedTheme);
@@ -13,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function Logo() {
   return (
     <div className="mx-auto md:ml-0">
-      {/* <img src={logo} alt="vite logo" width="" /> */}
-      {/* <p className="text-accent">LOGO</p> */}
-      <Layers3 size={20} className="text-accent opacity-90" />
+      <Link to={"/"}>
+        <Layers3 size={20} className="text-accent opacity-90" />
+      </Link>
     </div>
   );
 }
@@ -60,14 +62,61 @@ function MenuIcon() {
   );
 }
 
+type work = { status: "away" | "available"; className?: string };
+
+function Availability({ className, status }: work) {
+  return (
+    <div className={`available-for-work flex items-center gap-1 ${className}`}>
+      <div
+        className={`size-[8px] rounded-[100%] ${
+          status == "available" ? "bg-green-500" : "bg-red-500"
+        } `}
+      >
+        <p
+          className={`indicator size-[8px] rounded-[100%] ${
+            status == "available" ? "bg-green-500" : "bg-red-500"
+          }  animate-ping`}
+        ></p>
+      </div>
+      {status == "available" ? <p>Available for work</p> : <p>Away</p>}
+    </div>
+  );
+}
+
+function CV() {
+  return (
+    <div>
+      <a href={cv}>
+        <Button
+          variant="pill"
+          size="pill"
+          className="text-accent bg-accent text-white px-2 py-[2px] hover:border-green-300"
+        >
+          CV
+          <Download size={14} className="ml-1" />
+        </Button>
+      </a>
+    </div>
+  );
+}
+
 export default function Header() {
   return (
     <div className="header-wrapper">
-      <div className="container-4xl w-full flex gap-x-3 items-center h-[26px]">
-        <MenuIcon />
-        <Logo />
-        <Links />
-        <ThemeToggle />
+      <div className="container-4xl w-full h-[56px]">
+        <div className="primary-nav flex gap-x-3 items-center p-2 pt-3 md:pt-4 px-4">
+          <MenuIcon />
+          <Logo />
+          <Availability status="available" className="hidden md:flex mr-2" />
+          <CV />
+          <Links />
+          <ThemeToggle />
+        </div>
+      </div>
+      <div className="secondary-nav bg-slate-300/[.15] dark:bg-slate-700/[.15] md:hidden">
+        <div className="wrapper container-4xl  p-2 px-4">
+          <Availability status="available" />
+        </div>
       </div>
     </div>
   );

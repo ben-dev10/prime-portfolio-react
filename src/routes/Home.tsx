@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles, Layout, Package } from "lucide-react";
+import { Sparkles, Layout, Package, ChevronRight } from "lucide-react";
 import noise from "../assets/noise-01.png";
 import pic1 from "../assets/carousel/pic-1.png";
 import pic2 from "../assets/carousel/pic-2.jpg";
 import pic3 from "../assets/carousel/pic-3.jpg";
-
-import FormUI from "../components/ui-2/formui.tsx"
+import FormUI from "../components/ui-2/formui.tsx";
+import { Link } from "react-router-dom";
+// import { useRef } from "react";
 
 function Hero() {
+  // const contactSectionRef = useRef(null);
+  function handleClick() {
+    document.getElementById("contactSection")?.scrollIntoView({behavior:"smooth"});
+  }
+
   return (
     <div className="hero-section h-[50vh]" id="hero-wrapper">
       <div className="wrapper relative overflow-y-hidden container-4xl p-4 py-10 h-full flex items-center">
@@ -16,10 +22,25 @@ function Hero() {
             ...loves to design and build delightful interfaces.
           </h1>
           <p className="">Hello 👋, I'm Ben, welcome to my portfolio.</p>
-          <div className="buttons mt-4">
-            <Button variant="pill" size="pill" className="text-accent">
+          <div className="buttons mt-4 space-x-3">
+            <Button
+              variant="pill"
+              size="pill"
+              className="text-accent hover:bg-accent hover:text-white"
+              onClick={handleClick}
+            >
               Contact
             </Button>
+            <Link to={"/about"}>
+              <Button
+                variant="pill"
+                size="pill"
+                className="text-accent hover:bg-accent hover:text-white pr-2"
+              >
+                About Me
+                <ChevronRight size={14} />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -47,7 +68,7 @@ function Intro() {
       <div className="wrapper p-4 container-4xl py-10">
         <div className="box-content max-w-[600px] mx-auto">
           <h2 className="h3 text-secondary mb-2">
-            Expect nothing but world class service in{" "}
+            Expect nothing but world-class service in{" "}
             <span className="text-accent">web development</span>.
           </h2>
           <p>
@@ -262,7 +283,7 @@ function Services() {
           </p>
         </div>
 
-        <div className="mt-[60px] max-w-[400px] mx-auto flex flex-col items-center gap-5">
+        <div className="mt-[60px] max-w-[400px] mx-auto flex flex-col items-center gap-10">
           <ServiceTextGroup
             header="Web Development"
             icon={<Package size={20} />}
@@ -298,17 +319,22 @@ function Services() {
 
 function Contact() {
   return (
-    <div className="bg-[rgba(64,195,53,.12)] border-t border-b border-[rgba(64,195,53,.9)] md:h-[200px]">
+    <div
+      className="bg-[rgba(64,195,53,.12)] border-t border-b border-[rgba(64,195,53,.9)] md:h-[200px]"
+      id="contactSection"
+    >
       <div className="wrapper container-4xl p-4">
-        <div className="md:flex md:mx-auto md:max-w-max md:gap-[60px]">
-          <div className="texts">
+        <div className="md:flex md:mx-auto md:max-w-max md:gap-[60px] ">
+          <div className="texts md:mt-[3%] px-3">
             <div className="flex md:flex-col">
               <h1 className="h1 text-secondary">Ready?</h1>
               <h1 className="h1 text-secondary ml-1">Let's Talk</h1>
             </div>
-            <p className="md:w-[200px]">Send me a mail and I'll get back to you as soon as possible</p>
+            <p className="md:w-[200px]">
+              Send me a mail and I'll get back to you as soon as possible
+            </p>
           </div>
-          <div className="contact-card">
+          <div className="contact-card px-3">
             <FormUI />
           </div>
         </div>

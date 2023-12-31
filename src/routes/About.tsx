@@ -1,7 +1,7 @@
 function Header() {
   return (
     <div className="">
-      <div className="wrapper container-4xl p-4">
+      <div className="wrapper container-4xl p-4 px-6">
         <h1 className="h1 text-secondary">More About Me</h1>
         <p>
           I'm guessing you've asking yourself a couple of questions right now,
@@ -20,7 +20,7 @@ function Persona() {
 
   return (
     <div className="">
-      <div className="wrapper container-4xl p-4">
+      <div className="wrapper container-4xl p-4 px-6">
         <h1 className="h3 text-secondary">Persona</h1>
         <p>
           My name is <span>Bernard Quarshie</span>, a Ghanaian by birth and I'm{" "}

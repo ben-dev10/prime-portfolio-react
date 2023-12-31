@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 function App() {
   return (
     <>
-      <header className="p-4 sticky top-0 border-b bg-background/80 backdrop-blur-[8px] z-[40]">
+      <header className="sticky top-0 border-b bg-background/80 backdrop-blur-[8px] z-[40]">
         <Header />
       </header>
 
@@ -13,7 +13,7 @@ function App() {
         <Outlet></Outlet>
       </main>
 
-      <footer className="mt-10">
+      <footer className="">
         <Footer />
       </footer>
     </>

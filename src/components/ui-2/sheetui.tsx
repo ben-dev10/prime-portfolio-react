@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetFooter,
-  SheetTrigger,
-} from "../ui/sheet";
+import { Sheet, SheetContent, SheetFooter, SheetTrigger } from "../ui/sheet";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Bookmark, Layers } from "lucide-react";
 
 export function SheetUI() {
+  const [open, setOpen] = useState(true);
+  const handleClick = () => {
+    setOpen(false);
+  };
   return (
     <div className="">
-      <Sheet>
+      <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button className="pl-0 shadow-none bg-transparent hover:bg-transparent">
             <svg
@@ -45,23 +45,24 @@ export function SheetUI() {
             </svg>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="w-full md:max-w-full">
-          <div className="links gap-3 mb-10 flex flex-col">
-            <SheetClose className="" asChild>
-              <Link to="/about" className="sheet-link">
+        <SheetContent
+          side="left"
+          className="w-full md:max-w-full flex flex-col"
+        >
+          <div className="links gap-3 flex flex-col mt-5 text-[13px] border-b border-dashed border-slate-400 dark:border-slate-700 pb-2 max-w-[350px] w-[70%] mx-auto mb-auto">
+            <div onClick={handleClick}>
+              <Link to="/about" className="sheet-link flex items-center gap-1">
+                <Bookmark size={16} />
                 About
               </Link>
-            </SheetClose>
-
-            <SheetClose className="" asChild>
-              <Link to="/" className="sheet-link">
-                Home
-              </Link>
-            </SheetClose>
+            </div>
           </div>
 
           <SheetFooter>
-           
+            <div className="flex gap-1 w-full items-center border border-accent p-2 px-3 rounded-md bg-[rgba(64,195,53,.9)] ">
+              <Layers size={16} className="text-green-50" />
+              <p className="text-white">Nard Designs</p>
+            </div>
           </SheetFooter>
         </SheetContent>
       </Sheet>
