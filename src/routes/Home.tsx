@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles, Layout, Package, ChevronRight } from "lucide-react";
 import noise from "../assets/noise-01.png";
-import pic1 from "../assets/carousel/pic-1.png";
-import pic2 from "../assets/carousel/pic-2.jpg";
-import pic3 from "../assets/carousel/pic-3.jpg";
+import pic1 from "../assets/carousel/tasker-1.png";
+import pic2 from "../assets/carousel/cps-1.png";
+import img2 from "../assets/carousel/pic-2.jpg";
+import pic3 from "../assets/carousel/velvet-1.png";
 import FormUI from "../components/ui-2/formui.tsx";
 import { Link } from "react-router-dom";
 // import { useRef } from "react";
@@ -11,7 +12,9 @@ import { Link } from "react-router-dom";
 function Hero() {
   // const contactSectionRef = useRef(null);
   function handleClick() {
-    document.getElementById("contactSection")?.scrollIntoView({behavior:"smooth"});
+    document
+      .getElementById("contactSection")
+      ?.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -128,20 +131,23 @@ type CarouselImgType = {
   header: string;
   text: string;
   url: string;
+  siteUrl: string;
 };
 
-function CarouselImg({ header, text, url }: CarouselImgType) {
+function CarouselImg({ header, text, url, siteUrl }: CarouselImgType) {
   return (
     <div className="shrink-0">
-      <img
-        src={url}
-        alt="image"
-        className="w-[350px] h-[200px] rounded-lg shadow-lg object-cover"
-      />
-      <div className="pl-3 pt-2">
-        <h3 className="h3 text-accent">{header}</h3>
-        <p className="">{text}</p>
-      </div>
+      <a href={siteUrl}>
+        <img
+          src={url}
+          alt="image"
+          className="w-[350px] h-[200px] rounded-lg shadow-lg object-cover"
+        />
+        <div className="pl-3 pt-2">
+          <h3 className="h3 text-accent">{header}</h3>
+          <p className="">{text}</p>
+        </div>
+      </a>
     </div>
   );
 }
@@ -166,16 +172,23 @@ function Showcase() {
         </div>
       </div>
       <div className="carousel-wrapper mt-5 w-full pb-10 flex lg:justify-center overflow-x-auto p-5 pt-2 gap-3">
-        <CarouselImg url={pic2} header="CPS" text="A simplified clone of WPS" />
+        <CarouselImg
+          url={pic2}
+          header="CPS"
+          text="A simplified clone of WPS"
+          siteUrl="https://ben-dev10.github.io/cps/"
+        />
         <CarouselImg
           url={pic3}
           header="Velvet"
           text="Landing page of a cosmetic company."
+          siteUrl="https://ben-dev10.github.io/velvet/"
         />
         <CarouselImg
           url={pic1}
           header="Tasker"
           text="A simple to-do list webapp"
+          siteUrl="https://ben-dev10.github.io/tasker/"
         />
       </div>
     </div>
@@ -213,30 +226,190 @@ function Skills() {
   );
 }
 
-// function AboutMe() {
-//   return (
-//     <div className="overflow-y-hidden  relative" id="aboutme-section">
-//       <div className="wrapper p-4 container-4xl">
-//         <img
-//           src={noise}
-//           alt="noise-img"
-//           className="absolute inset-0 w-full h-full object-fill object-center opacity-5 z-[-1]"
-//         />
+function Socials() {
+  return (
+    <div className="flex gap-2 my-2 items-center ">
+      <a href="https://x.com/NardQuarshie?t=5uT8pkHnOv1LvnLuU01qwA&s=09">
+        <svg
+          className="dark:fill-white/90  w-[18px] cursor-pointer hover:opacity-70"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          version="1.1"
+          aria-hidden="false"
+        >
+          <desc lang="en-US">X (formerly Twitter) icon</desc>
+          <path d="M13.69 10.622 20.25 3h-1.555l-5.693 6.618L8.454 3H3.21l6.876 10.007L3.21 21h1.554l6.012-6.99L15.578 21h5.245L13.69 10.622Zm-2.126 2.474-.697-.996-5.543-7.93H7.71l4.474 6.399.697.997 5.815 8.317h-2.387l-4.745-6.787Z"></path>
+        </svg>
+      </a>
 
-//         <div className="flex flex-col items-center">
-//           <HeaderPill text="About me" />
-//           <h3 className="h3 mt-3 dark:text-white text-slate-950 ">Who am I?</h3>
-//         </div>
+      <a href="https://github.com/ben-dev10" title="github">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="dark:fill-white/90 text-black w-[18px] cursor-pointer hover:opacity-70"
+        >
+          <desc lang="en-US">GitHub icon</desc>
+          <path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm3.163 21.783h-.093a.513.513 0 0 1-.382-.14.513.513 0 0 1-.14-.372v-1.406c.006-.467.01-.94.01-1.416a3.693 3.693 0 0 0-.151-1.028 1.832 1.832 0 0 0-.542-.875 8.014 8.014 0 0 0 2.038-.471 4.051 4.051 0 0 0 1.466-.964c.407-.427.71-.943.885-1.506a6.77 6.77 0 0 0 .3-2.13 4.138 4.138 0 0 0-.26-1.476 3.892 3.892 0 0 0-.795-1.284 2.81 2.81 0 0 0 .162-.582c.033-.2.05-.402.05-.604 0-.26-.03-.52-.09-.773a5.309 5.309 0 0 0-.221-.763.293.293 0 0 0-.111-.02h-.11c-.23.002-.456.04-.674.111a5.34 5.34 0 0 0-.703.26 6.503 6.503 0 0 0-.661.343c-.215.127-.405.249-.573.362a9.578 9.578 0 0 0-5.143 0 13.507 13.507 0 0 0-.572-.362 6.022 6.022 0 0 0-.672-.342 4.516 4.516 0 0 0-.705-.261 2.203 2.203 0 0 0-.662-.111h-.11a.29.29 0 0 0-.11.02 5.844 5.844 0 0 0-.23.763c-.054.254-.08.513-.081.773 0 .202.017.404.051.604.033.199.086.394.16.582A3.888 3.888 0 0 0 5.702 10a4.142 4.142 0 0 0-.263 1.476 6.871 6.871 0 0 0 .292 2.12c.181.563.483 1.08.884 1.516.415.422.915.75 1.466.964.653.25 1.337.41 2.033.476a1.828 1.828 0 0 0-.452.633 2.99 2.99 0 0 0-.2.744 2.754 2.754 0 0 1-1.175.27 1.788 1.788 0 0 1-1.065-.3 2.904 2.904 0 0 1-.752-.824 3.1 3.1 0 0 0-.292-.382 2.693 2.693 0 0 0-.372-.343 1.841 1.841 0 0 0-.432-.24 1.2 1.2 0 0 0-.481-.101c-.04.001-.08.005-.12.01a.649.649 0 0 0-.162.02.408.408 0 0 0-.13.06.116.116 0 0 0-.06.1.33.33 0 0 0 .14.242c.093.074.17.131.232.171l.03.021c.133.103.261.214.382.333.112.098.213.209.3.33.09.119.168.246.231.381.073.134.15.288.231.463.188.474.522.875.954 1.145.453.243.961.364 1.476.351.174 0 .349-.01.522-.03.172-.028.343-.057.515-.091v1.743a.5.5 0 0 1-.533.521h-.062a10.286 10.286 0 1 1 6.324 0v.005z" />
+        </svg>
+      </a>
+    </div>
+  );
+}
 
-//         <div className="about-card-wrapper">
-//           <div className="border border-red-500 grid place-items-center h-[500px]">
-//             <div className="p-[150px] bg-blue-500">Hello</div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+function AboutMeCard() {
+  const year = new Date();
+  const age: number = 2002;
+  return (
+    <div className="about-me-card flex flex-col shadow-lg rounded-xl dark:bg-[#0c0d0d] bg-slate-200 max-w-[400px] mx-auto h-[350px]">
+      <div
+        className="header p-3 px-5 rounded-tl-xl rounded-tr-xl"
+        id="card-header"
+      >
+        <div className="pull-handle w-full flex justify-center mb-5 p-1">
+          <div className="min-w-[80px] max-w-[150px] rounded-full h-[5px] bg-slate-400"></div>
+        </div>
+
+        <div className="flex items-center gap-2 pb-8">
+          <div className="avatar">
+            <img
+              src={img2}
+              alt="avatar img"
+              className="size-[40px] rounded-full border"
+            />
+          </div>
+
+          <div>
+            <p className="text-[14px] font-[CabinetG] text-white">
+              Bernard Quarshie
+            </p>
+            <p className="text-accent">web and design enthusiast</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="body bg-slate-300 flex flex-col dark:bg-black grow rounded-bl-xl rounded-br-xl p-4 px-6">
+        <h4 className="h4 text-secondary">More About Me</h4>
+        <p className="text-slate-500 mb-auto">
+          I'm Bernard Quarshie, a {year.getFullYear() - age} year old and a
+          passionate{" "}
+          <span className="text-accent underline">Web Developer</span> who
+          happens to know a little bit of{" "}
+          <span className="text-accent underline">design</span>.
+        </p>
+
+        <div className="flex justify-end items-center">
+          <div className="mr-auto">
+            <Link to={"/about"}>
+              <Button
+                variant="pill"
+                size="pill"
+                className="text-accent hover:bg-accent hover:text-white pr-2"
+              >
+                About Me
+                <ChevronRight size={14} />
+              </Button>
+            </Link>
+          </div>
+          <Socials />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AboutMe() {
+  return (
+    <div className="overflow-y-hidden  relative" id="aboutme-section">
+      <div className="wrapper p-4 container-4xl pb-10">
+        <img
+          src={noise}
+          alt="noise-img"
+          className="absolute inset-0 w-full h-full object-fill object-center opacity-5 z-[-1]"
+        />
+
+        <div className="flex flex-col items-center mb-4">
+          <HeaderPill text="About me" />
+          <h3 className="h3 mt-3 dark:text-white text-slate-950 ">Who am I?</h3>
+        </div>
+
+        <div className="about-card-wrapper">
+          {/* <svg width="791" height="539" viewBox="0 0 791 539" fill="none">
+            <line
+              x1="131.5"
+              y1="1.85913e-08"
+              x2="131.5"
+              y2="539"
+              stroke="#2563EB"
+              strokeOpacity="0.2"
+            />
+            <line
+              x1="688.5"
+              y1="2.18557e-08"
+              x2="688.5"
+              y2="539"
+              stroke="#2563EB"
+              strokeOpacity="0.2"
+            />
+            <line
+              x1="4.37114e-08"
+              y1="501.5"
+              x2="791"
+              y2="501.5"
+              stroke="url(#paint0_radial_31_250)"
+              strokeOpacity="0.2"
+            />
+            <line
+              x1="4.37114e-08"
+              y1="26.5"
+              x2="791"
+              y2="26.5001"
+              stroke="url(#paint1_radial_31_250)"
+              strokeOpacity="0.2"
+            />
+
+            <foreignObject
+              x="120"
+              y="120"
+              width="300"
+              height="300"
+              className="max-w-[400px]"
+            ></foreignObject>
+
+            <defs>
+              <radialGradient
+                id="paint0_radial_31_250"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(402.999 502.001) rotate(55.3483) scale(247.986 50562.8)"
+              >
+                <stop offset="0.00450785" stopColor="#2563EB" />
+                <stop offset="1" stopColor="#2563EB" stopOpacity="0" />
+              </radialGradient>
+              <radialGradient
+                id="paint1_radial_31_250"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(402.992 27.0082) rotate(16.6253) scale(370.489 180034)"
+              >
+                <stop stopColor="#2563EB" />
+                <stop offset="1" stopColor="#2563EB" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+          </svg> */}
+
+          <AboutMeCard />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 type ServiceGroup = {
   icon: React.ReactNode;
@@ -328,7 +501,7 @@ function Contact() {
           <div className="texts md:mt-[3%] px-3">
             <div className="flex md:flex-col">
               <h1 className="h1 text-secondary">Ready?</h1>
-              <h1 className="h1 text-secondary ml-1">Let's Talk</h1>
+              <h1 className="h1 text-secondary ml-1 md:ml-0">Let's Talk</h1>
             </div>
             <p className="md:w-[200px]">
               Send me a mail and I'll get back to you as soon as possible
@@ -350,7 +523,7 @@ export default function Home() {
       <Intro />
       <Showcase />
       <Skills />
-      {/* <AboutMe /> */}
+      <AboutMe />
       <Services />
       <Contact />
     </div>

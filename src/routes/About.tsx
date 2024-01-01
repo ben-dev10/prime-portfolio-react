@@ -2,7 +2,7 @@ function Header() {
   return (
     <div className="">
       <div className="wrapper container-4xl p-4 px-6">
-        <h1 className="h1 text-secondary">More About Me</h1>
+        <h1 className="h1 text-secondary">Some More About Me</h1>
         <p>
           I'm guessing you've asking yourself a couple of questions right now,
           "who is this guy anyway?". Well I'm going to answer them right now!

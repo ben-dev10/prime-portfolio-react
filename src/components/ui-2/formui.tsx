@@ -50,7 +50,7 @@ const FormUI = () => (
       </Form.Control>
     </FormField>
 
-    <FormField name="service" className="mb-10">
+    <FormField name="service" className="">
       <Flex css={{ alignItems: "baseline", justifyContent: "space-between" }}>
         <FormLabel>Service required</FormLabel>
         <FormMessage match="valueMissing">
@@ -64,6 +64,8 @@ const FormUI = () => (
         <Input type="text" required className="form-input" />
       </Form.Control>
     </FormField>
+
+    <div className="h-[30px]"></div>
 
     <Form.Submit asChild className="">
       <div className="dark:bg-[#000] bg-slate-300 p-3 px-4 pb-5 rounded-bl-[10px] rounded-br-[10px]">
