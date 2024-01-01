@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { Download, Layers3, Sun } from "lucide-react";
+import { Download, Sun } from "lucide-react";
 import { SheetUI } from "../ui-2/sheetui";
 import { Button } from "../ui/button";
 import cv from "../../assets/resume/resume-v1.pdf";
+import { motion } from "framer-motion";
 
 // Updates theme
 document.addEventListener("DOMContentLoaded", function () {
@@ -12,11 +13,49 @@ document.addEventListener("DOMContentLoaded", function () {
   document.documentElement.classList.add(savedTheme);
 });
 
+const pathVariant = {
+  initial: { opacity: 0, pathLength: 0, rotate: -360 },
+  final: {
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
 function Logo() {
   return (
     <div className="mx-auto md:ml-0">
       <Link to={"/"}>
-        <Layers3 size={20} className="text-accent opacity-90" />
+        <motion.svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          // stroke="#bfdbfe"
+          stroke-width="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          initial="initial"
+          animate="final"
+          className="stroke-accent text-accent"
+        >
+          <motion.path
+            variants={pathVariant}
+            d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"
+          />
+          <motion.path
+            variants={pathVariant}
+            className="-rotate-360"
+            d="m6.08 9.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"
+          />
+          <motion.path
+            variants={pathVariant}
+            d="m6.08 14.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"
+          />
+        </motion.svg>
       </Link>
     </div>
   );

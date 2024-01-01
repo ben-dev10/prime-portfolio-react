@@ -263,13 +263,13 @@ function AboutMeCard() {
   const year = new Date();
   const age: number = 2002;
   return (
-    <div className="about-me-card flex flex-col shadow-lg rounded-xl dark:bg-[#0c0d0d] bg-slate-200 max-w-[400px] mx-auto h-[350px]">
+    <div className="about-me-card flex flex-col shadow-lg rounded-xl dark:bg-[#0c0d0d] bg-slate-100 max-w-[400px] mx-auto h-[350px]">
       <div
         className="header p-3 px-5 rounded-tl-xl rounded-tr-xl"
         id="card-header"
       >
         <div className="pull-handle w-full flex justify-center mb-5 p-1">
-          <div className="min-w-[80px] max-w-[150px] rounded-full h-[5px] bg-slate-400"></div>
+          <div className="min-w-[80px] max-w-[150px] rounded-full h-[5px] bg-slate-300"></div>
         </div>
 
         <div className="flex items-center gap-2 pb-8">
@@ -290,7 +290,7 @@ function AboutMeCard() {
         </div>
       </div>
 
-      <div className="body bg-slate-300 flex flex-col dark:bg-black grow rounded-bl-xl rounded-br-xl p-4 px-6">
+      <div className="body bg-slate-100 flex flex-col dark:bg-black grow rounded-bl-xl rounded-br-xl p-4 px-6">
         <h4 className="h4 text-secondary">More About Me</h4>
         <p className="text-slate-500 mb-auto">
           I'm Bernard Quarshie, a {year.getFullYear() - age} year old and a
@@ -504,7 +504,14 @@ function Contact() {
               <h1 className="h1 text-secondary ml-1 md:ml-0">Let's Talk</h1>
             </div>
             <p className="md:w-[200px]">
-              Send me a mail and I'll get back to you as soon as possible
+              Send me a{" "}
+              <a
+                href="mailto:quarshiebernard552@gmail.com"
+                className="text-accent underline"
+              >
+                mail
+              </a>{" "}
+              and I'll get back to you as soon as possible
             </p>
           </div>
           <div className="contact-card px-3">

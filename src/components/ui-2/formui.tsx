@@ -5,7 +5,7 @@ import avatar from "../../assets/carousel/pic-2.jpg";
 
 const FormUI = () => (
   <FormRoot
-    className="w-full md:w-[350px] border dark:border-slate-700 border-slate-300 my-5 rounded-[10px] dark:bg-[#0c0d0d] bg-slate-200 md:translate-y-[-32%]"
+    className="w-full md:w-[350px] border dark:border-slate-700 border-slate-300 my-5 rounded-[10px] dark:bg-[#0c0d0d] bg-slate-100 md:translate-y-[-32%]"
     onSubmit={(e) => {
       e.preventDefault();
       alert("Thanks, we will get in touch.");
@@ -61,14 +61,19 @@ const FormUI = () => (
         </FormMessage>
       </Flex>
       <Form.Control asChild>
-        <Input type="text" required className="form-input" />
+        <Input
+          type="text"
+          required
+          className="form-input dark:placeholder:text-slate-600/50 placeholder:text-slate-300"
+          placeholder="Web development, graphic design..."
+        />
       </Form.Control>
     </FormField>
 
-    <div className="h-[30px]"></div>
+    <div className="h-[20px]"></div>
 
     <Form.Submit asChild className="">
-      <div className="dark:bg-[#000] bg-slate-300 p-3 px-4 pb-5 rounded-bl-[10px] rounded-br-[10px]">
+      <div className="dark:bg-[#000] bg-slate-200 p-3 px-4 pb-5 rounded-bl-[10px] rounded-br-[10px]">
         <Button css={{ marginTop: 10 }}>Submit</Button>
       </div>
     </Form.Submit>
