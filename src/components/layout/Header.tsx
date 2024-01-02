@@ -5,6 +5,7 @@ import { Button } from "../ui/button";
 import cv from "../../assets/resume/resume-v1.pdf";
 import { motion } from "framer-motion";
 
+
 // Updates theme
 document.addEventListener("DOMContentLoaded", function () {
   const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
@@ -35,7 +36,7 @@ function Logo() {
           viewBox="0 0 24 24"
           fill="none"
           // stroke="#bfdbfe"
-          stroke-width="4"
+          stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
           initial="initial"
