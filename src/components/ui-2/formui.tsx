@@ -1,26 +1,15 @@
-// import dotenv from "dotenv";
-// import "dotenv/config.js";
 import * as Form from "@radix-ui/react-form";
 import { styled } from "@stitches/react";
 import { blackA } from "@radix-ui/colors";
 import avatar from "../../assets/carousel/pic-2.jpg";
-// import "dotenv/config";
-// import config from "dotenv";
-
-// dotenv.config();
-// const formURL = process.env.FORM_URL;
-
-// console.log(import.meta.env.VITE_FORM_URL);
 
 const FormUI = () => (
   <FormRoot
     action={import.meta.env.VITE_FORM_URL}
     method="POST"
     className="contact-form w-full md:w-[350px] border dark:border-slate-700 border-slate-300 my-5 rounded-[10px] dark:bg-[#0c0d0d] bg-slate-100 md:translate-y-[-32%]"
-    onSubmit={(e) => {
-      e.preventDefault();
+    onSubmit={() => {
       alert("Thanks, we will get in touch.");
-      // alert("endpoint: " + import.meta.env.VITE_FORM_URL);
     }}
   >
     <div className="form-header p-4 flex gap-4 pt-6">
@@ -49,13 +38,13 @@ const FormUI = () => (
           type="text"
           required
           className="form-input "
-          name="name"
+          name="Name"
           autoComplete="on"
         />
       </Form.Control>
     </FormField>
 
-    <FormField name="email">
+    <FormField name="Email">
       <Flex css={{ alignItems: "baseline", justifyContent: "space-between" }}>
         <FormLabel>Email</FormLabel>
         <FormMessage match="valueMissing">Please enter your email</FormMessage>
@@ -90,7 +79,7 @@ const FormUI = () => (
           required
           className="form-input dark:placeholder:text-slate-600/50 placeholder:text-slate-300"
           placeholder="Web development, graphic design..."
-          name="service"
+          name="Message"
           autoComplete="on"
         />
       </Form.Control>
