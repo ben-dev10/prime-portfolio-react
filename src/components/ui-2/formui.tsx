@@ -5,7 +5,7 @@ import avatar from "../../assets/carousel/pic-2.jpg";
 
 const FormUI = () => (
   <FormRoot
-    action={import.meta.env.VITE_FORM_URL}
+    action={import.meta.env.VITE_FORM_URL2}
     method="POST"
     className="contact-form w-full md:w-[350px] border dark:border-slate-700 border-slate-300 my-5 rounded-[10px] dark:bg-[#0c0d0d] bg-slate-100 md:translate-y-[-32%]"
     onSubmit={() => {
