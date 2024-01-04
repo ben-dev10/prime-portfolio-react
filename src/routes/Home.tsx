@@ -77,10 +77,11 @@ function Intro() {
               <span className="text-accent">web development</span>.
             </h2>
             <div>
-              <p className="mb-6">
+              {/* FIXME: Find a better word animation */}
+              <h3 className="mb-3 h3 text-slate-500">
                 Let's get your <WordAnimation />{" "}
-                <span className="ml-[55px]"> website online</span>.
-              </p>
+                <span className="ml-[74px]"> website online</span>.
+              </h3>
               <p className="mt-2">
                 The process always starts by addressing a few requirements and
                 setting targets, that's it.
@@ -210,7 +211,7 @@ function SkillsPill({ text }: SkillsPillType) {
 
 function Skills() {
   return (
-    <div className="" id="skills-section">
+    <div className="border-t" id="skills-section">
       <div className="wrapper container-4xl p-4">
         <div className="flex flex-col items-center">
           <HeaderPill text="Skills" />
@@ -266,7 +267,7 @@ function AboutMeCard() {
   const year = new Date();
   const age: number = 2002;
   return (
-    <div className="about-me-card flex flex-col shadow-lg rounded-xl dark:bg-[#0c0d0d] bg-slate-100 max-w-[400px] mx-auto h-[350px]">
+    <div className="about-me-card flex flex-col shadow-lg rounded-xl dark:bg-[#0c0d0d] bg-slate-100 max-w-[500px] mx-auto h-[350px]">
       <div
         className="header p-3 px-5 rounded-tl-xl rounded-tr-xl"
         id="card-header"
@@ -500,7 +501,7 @@ function Contact() {
       id="contactSection"
     >
       <div className="wrapper container-4xl p-4">
-        <div className="md:flex md:mx-auto md:max-w-max md:gap-[60px] ">
+        <div className="md:flex md:mx-auto md:max-w-max md:gap-[40px] ">
           <div className="texts md:mt-[3%] px-3">
             <div className="flex md:flex-col">
               <h1 className="h1 text-secondary">Ready?</h1>
@@ -531,8 +532,8 @@ export default function Home() {
     <div className="">
       <Hero />
       <Intro />
-      <Showcase />
       <Skills />
+      <Showcase />
       <AboutMe />
       <Services />
       <Contact />

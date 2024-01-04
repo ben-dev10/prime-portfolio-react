@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const words = [
-  <span className="text-red-500">personal</span>,
+  <span className="text-red-500"> personal</span>,
   <span className="text-blue-500">products</span>,
-  <span className="text-yellow-500">business</span>,
-  <span className="text-green-500">portfolio</span>,
+  <span className="text-yellow-500"> business</span>,
+  <span className="text-green-500"> portfolio</span>,
 ];
 
 const WordAnimation = () => {
@@ -26,7 +26,7 @@ const WordAnimation = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="relative font-bold "
+        className="relative font-bold"
       >
         <span className="absolute">{words[currentWordIndex]}</span>
       </motion.span>
