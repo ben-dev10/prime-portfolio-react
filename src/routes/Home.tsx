@@ -7,6 +7,7 @@ import img2 from "../assets/carousel/pic-2.jpg";
 import pic3 from "../assets/carousel/velvet-1.png";
 import FormUI from "../components/ui-2/formui.tsx";
 import { Link } from "react-router-dom";
+import WordAnimation from "../components/WordAnimation.tsx";
 // import { useRef } from "react";
 
 function Hero() {
@@ -70,23 +71,25 @@ function Intro() {
     <div className="intro-section border" id="intro-section">
       <div className="wrapper p-4 container-4xl py-10">
         <div className="box-content max-w-[600px] mx-auto">
-          <h2 className="h3 text-secondary mb-2">
-            Expect nothing but world-class service in{" "}
-            <span className="text-accent">web development</span>.
-          </h2>
-          <p>
-            Getting your site online should never be a hassle, that's why I'm
-            ready to be your guide every step along the way, from{" "}
-            <span className="text-accent opacity-80">idea</span> to
-            <span className="text-accent opacity-80"> deployment</span>.
-          </p>
-          <p className="mt-2">
-            The process always starts by addressing a few requirements and
-            setting targets, that's it.
-          </p>
-          <p className="mt-2">
-            Looking forward to building your project together.
-          </p>
+          <div className="sm:pl-[60px]">
+            <h2 className="h3 text-secondary mb-2 ">
+              Expect nothing but world-class service in{" "}
+              <span className="text-accent">web development</span>.
+            </h2>
+            <div>
+              <p className="mb-6">
+                Let's get your <WordAnimation />{" "}
+                <span className="ml-[55px]"> website online</span>.
+              </p>
+              <p className="mt-2">
+                The process always starts by addressing a few requirements and
+                setting targets, that's it.
+              </p>
+              <p className="mt-2">
+                Looking forward to building your project together.
+              </p>
+            </div>
+          </div>
 
           <div className="mt-5 max-w-[500px] mx-auto">
             <div
