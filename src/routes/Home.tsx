@@ -8,7 +8,7 @@ import pic3 from "../assets/carousel/velvet-1.png";
 import FormUI from "../components/ui-2/formui.tsx";
 import { Link } from "react-router-dom";
 import WordAnimation from "../components/WordAnimation.tsx";
-import ContactForm from "@/components/ui-2/contact-form.tsx";
+// import ContactForm from "@/components/ui-2/contact-form.tsx";
 // import { useRef } from "react";
 
 function Hero() {
