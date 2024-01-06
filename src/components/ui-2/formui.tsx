@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import axios from "axios";
 import * as Form from "@radix-ui/react-form";
 import { styled } from "@stitches/react";
@@ -26,6 +26,7 @@ function FormUI() {
 
     try {
       setSubmitting(true);
+
       const response = await axios.post(
         "https://formbold.com/s/ozeyp",
         formData
@@ -132,10 +133,12 @@ function FormUI() {
         <div className="dark:bg-[#000] bg-slate-200 p-3 px-4 pb-5 rounded-bl-[10px] rounded-br-[10px]">
           <Button
             disabled={submitting}
-            css={{ marginTop: 10 }}
-            className={`text-white hover:bg-[rgba(64,195,53,.9)]  focus:ring-2 focus:ring-[rgba(41,235,23,0.5)] 
-              ${submitting ? "bg-slate-100" : "bg-[#40C335]"} 
-              ${submitting ? "cursor-not-allowed" : "cursor-pointer"}
+            className={`text-white mt-[10px] bg-[#40C335] hover:bg-[rgba(64,195,53,.9)]  focus:ring-2 focus:ring-[rgba(41,235,23,0.5)] 
+              ${
+                submitting
+                  ? "bg-slate-100 cursor-not-allowed text-slate-200 opacity-70"
+                  : "bg-[#40C335] cursor-pointer text-white opacity-100"
+              } 
             `}
           >
             Submit

@@ -8,7 +8,6 @@ import pic3 from "../assets/carousel/velvet-1.png";
 import FormUI from "../components/ui-2/formui.tsx";
 import { Link } from "react-router-dom";
 import WordAnimation from "../components/WordAnimation.tsx";
-// import ContactForm from "@/components/ui-2/contact-form.tsx";
 // import { useRef } from "react";
 
 function Hero() {
@@ -122,9 +121,7 @@ function Intro() {
   );
 }
 
-type HeaderPill = { text: string };
-
-function HeaderPill({ text }: HeaderPill) {
+function HeaderPill({ text }: {text:string}) {
   return (
     <div className="rounded-full text-[11px] text-accent border border-[rgba(64,195,53,.3)] max-w-max px-3 py-[2px]">
       {text}
@@ -200,9 +197,7 @@ function Showcase() {
   );
 }
 
-type SkillsPillType = { text: string };
-
-function SkillsPill({ text }: SkillsPillType) {
+function SkillsPill({ text }: { text: string }) {
   return (
     <div className="bg-[rgba(64,195,53,.5)] rounded-full max-w-max px-3 py-1 border border-accent text-white">
       {text}
