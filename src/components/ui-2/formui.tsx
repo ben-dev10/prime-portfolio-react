@@ -27,7 +27,7 @@ function FormUI() {
 
     try {
       const response = await axios.post(
-        import.meta.env.VITE_FORM_URL2,
+        "https://formbold.com/s/ozeyp",
         formData
       );
       console.log(response.data);
