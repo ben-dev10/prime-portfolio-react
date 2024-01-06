@@ -1,8 +1,7 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import axios from "axios";
 import * as Form from "@radix-ui/react-form";
 import { styled } from "@stitches/react";
-import { blackA } from "@radix-ui/colors";
 import avatar from "../../assets/carousel/pic-2.jpg";
 
 interface FormData {
@@ -12,12 +11,12 @@ interface FormData {
 }
 
 function FormUI() {
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
   });
-
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -26,6 +25,7 @@ function FormUI() {
     e.preventDefault();
 
     try {
+      setSubmitting(true);
       const response = await axios.post(
         "https://formbold.com/s/ozeyp",
         formData
@@ -35,18 +35,15 @@ function FormUI() {
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("An error occurred while submitting the form.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
     <FormRoot
       onSubmit={handleSubmit}
-      // action={import.meta.env.VITE_FORM_URL2}
-      // method="POST"
       className="contact-form w-full md:w-[350px] border dark:border-slate-700 border-slate-300 my-5 rounded-[10px] dark:bg-[#0c0d0d] bg-slate-100 md:translate-y-[-32%]"
-      // onSubmit={() => {
-      //   alert("Thanks, we will get in touch.");
-      // }}
     >
       <div className="form-header p-4 flex gap-4 pt-6">
         <div className="relative">
@@ -133,7 +130,16 @@ function FormUI() {
 
       <Form.Submit asChild className="">
         <div className="dark:bg-[#000] bg-slate-200 p-3 px-4 pb-5 rounded-bl-[10px] rounded-br-[10px]">
-          <Button css={{ marginTop: 10 }}>Submit</Button>
+          <Button
+            disabled={submitting}
+            css={{ marginTop: 10 }}
+            className={`text-white hover:bg-[rgba(64,195,53,.9)]  focus:ring-2 focus:ring-[rgba(41,235,23,0.5)] 
+              ${submitting ? "bg-slate-100" : "bg-[#40C335]"} 
+              ${submitting ? "cursor-not-allowed" : "cursor-pointer"}
+            `}
+          >
+            Submit
+          </Button>
         </div>
       </Form.Submit>
     </FormRoot>
@@ -186,19 +192,12 @@ const Button = styled("button", {
   alignItems: "center",
   justifyContent: "center",
   borderRadius: 6,
-  cursor: "pointer",
   padding: "0 15px",
   fontSize: 13,
   lineHeight: 1,
   fontWeight: 500,
   height: 35,
   width: "100%",
-
-  backgroundColor: "#40C335",
-  color: "white",
-  boxShadow: `0 2px 5px ${blackA.blackA4}`,
-  "&:hover": { backgroundColor: "rgba(64, 195, 53, .9)" },
-  "&:focus": { boxShadow: `0 0 0 2px rgba(41, 235, 23, 0.5)` },
 });
 
 export default FormUI;

@@ -472,7 +472,7 @@ function Services() {
           <ServiceTextGroup
             header="Web Design"
             icon={<Layout size={20} />}
-            description="Design new or re design existing websites"
+            description="Design new or re-design existing websites"
           />
           <ServiceTextGroup
             header="Graphic Design"
