@@ -8,6 +8,7 @@ import pic3 from "../assets/carousel/velvet-1.png";
 import FormUI from "../components/ui-2/formui.tsx";
 import { Link } from "react-router-dom";
 import WordAnimation from "../components/WordAnimation.tsx";
+import ContactForm from "@/components/ui-2/contact-form.tsx";
 // import { useRef } from "react";
 
 function Hero() {
@@ -211,7 +212,7 @@ function SkillsPill({ text }: SkillsPillType) {
 
 function Skills() {
   return (
-    <div className="border-t" id="skills-section">
+    <div className="" id="skills-section">
       <div className="wrapper container-4xl p-4">
         <div className="flex flex-col items-center">
           <HeaderPill text="Skills" />
@@ -532,11 +533,12 @@ export default function Home() {
     <div className="">
       <Hero />
       <Intro />
-      <Skills />
       <Showcase />
+      <Skills />
       <AboutMe />
       <Services />
       <Contact />
+      {/* <ContactForm /> */}
     </div>
   );
 }

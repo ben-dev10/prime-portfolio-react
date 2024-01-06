@@ -181,7 +181,7 @@ body {
 #aboutme-section {
   background: radial-gradient(49.39% 41.47% at 98.78% 0%, rgba(81, 105, 233, 0.19) 0%, rgba(11, 131, 59, 0.03) 100%), radial-gradient(592.16% 94.14% at 98.78% 0%, rgba(34, 97, 218, 0.17) 0%, rgba(56, 160, 98, 0.00) 100%);
   border: 1px solid;
-  border-image: linear-gradient(to right, rgb(57, 110, 234), rgba(64, 195, 53, 0));
+  border-image: linear-gradient(to left, rgb(57, 110, 234), rgba(64, 195, 53, 0));
   border-image-slice: 1;
 }
 
@@ -216,6 +216,9 @@ body {
 
   .form-input {
     /* prettier-ignore */
-    @apply text-[#71717a] border-b dark:border-[#3f3f46] border-slate-400/30 bg-transparent outline-none dark:hover:border-[rgba(64,195,53,.5)] dark:focus:border-[rgba(64,195,53,.8)] dark:selection:bg-[rgba(64,195,53,.5)] dark:selection:text-white hover:border-[rgba(64,195,53,.5)] focus:border-[rgba(64,195,53,.8)] selection:bg-[rgba(64,195,53,.5)] selection:text-white
+    @apply text-[#71717a] border-b dark:border-[#3f3f46] border-slate-400/30 bg-transparent outline-none 
+    dark:hover:border-[rgba(64,195,53,.5)] dark:focus:border-[rgba(64,195,53,.8)] dark:selection:bg-[rgba(64,195,53,.5)]
+    dark:selection:text-white hover:border-[rgba(64,195,53,.5)] focus:border-[rgba(64,195,53,.8)] selection:bg-[rgba(64,195,53,.5)] 
+    selection:text-white
   }
 }
