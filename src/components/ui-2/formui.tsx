@@ -37,7 +37,7 @@ function FormUI() {
       );
       console.log(response.data);
       // alert("Thanks, we will get in touch.");
-      window.location.href = "../../routes/thanks.html";
+      window.location.href = "src/routes/thanks.html";
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("An error occurred while submitting the form.");
