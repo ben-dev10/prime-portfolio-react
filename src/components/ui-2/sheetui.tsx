@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetFooter, SheetTrigger } from "../ui/sheet";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Bookmark, Layers } from "lucide-react";
+import { Bookmark, GalleryHorizontalEnd, Home, Layers } from "lucide-react";
 
 export function SheetUI() {
   const [open, setOpen] = useState(false);
@@ -20,6 +20,7 @@ export function SheetUI() {
               height="18"
               viewBox="0 0 18 18"
               fill="none"
+              className="scale-[1.2]"
             >
               <path
                 d="M3 9H10.2188"
@@ -49,11 +50,19 @@ export function SheetUI() {
           side="left"
           className="w-full md:max-w-full flex flex-col"
         >
-          <div className="links gap-3 flex flex-col mt-5 text-[13px] border-b border-dashed border-slate-400 dark:border-slate-700 pb-2 max-w-[350px] w-[70%] mx-auto mb-auto">
-            <div onClick={handleClick}>
-              <Link to="/about" className="sheet-link flex items-center gap-1">
+          <div className="links gap-3 flex flex-col mt-5 text-[13px] border-slate-600  pb-2 max-w-[350px] w-[70%] mx-auto mb-auto">
+            <div onClick={handleClick} className="space-y-3">
+              <Link to="/" className="sheet-link">
+                <Home size={16} />
+                Home
+              </Link>
+              <Link to="/about" className="sheet-link">
                 <Bookmark size={16} />
                 About
+              </Link>
+              <Link to="/projects" className="sheet-link">
+                <GalleryHorizontalEnd size={16} />
+                Projects
               </Link>
             </div>
           </div>

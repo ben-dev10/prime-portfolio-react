@@ -49,7 +49,7 @@ function Persona() {
 
 export default function About() {
   return (
-    <main>
+    <main className="pb-[50px]">
       <Header />
       <Persona />
     </main>

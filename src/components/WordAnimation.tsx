@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const words = [
   <span className="text-red-500"> personal</span>,
-  <span className="text-blue-500">products</span>,
+  <span className="text-blue-500 !text-[17px]">products</span>,
   <span className="text-yellow-500"> business</span>,
   <span className="text-green-500"> portfolio</span>,
 ];

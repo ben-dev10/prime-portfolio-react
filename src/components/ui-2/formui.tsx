@@ -3,6 +3,9 @@ import axios from "axios";
 import * as Form from "@radix-ui/react-form";
 import { styled } from "@stitches/react";
 import avatar from "../../assets/carousel/pic-2.jpg";
+import "../../styles/form.css";
+
+const formApiKey = import.meta.env.VITE_FORM_URL;
 
 interface FormData {
   name: string;
@@ -28,11 +31,13 @@ function FormUI() {
       setSubmitting(true);
 
       const response = await axios.post(
-        "https://formbold.com/s/ozeyp",
+        // "https://formbold.com/s/ozeyp",
+        formApiKey,
         formData
       );
       console.log(response.data);
-      alert("Thanks, we will get in touch.");
+      // alert("Thanks, we will get in touch.");
+      window.location.href = "../../routes/thanks.html";
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("An error occurred while submitting the form.");
@@ -133,7 +138,7 @@ function FormUI() {
         <div className="dark:bg-[#000] bg-slate-200 p-3 px-4 pb-5 rounded-bl-[10px] rounded-br-[10px]">
           <Button
             disabled={submitting}
-            className={`text-white mt-[10px] bg-[#40C335] hover:bg-[rgba(64,195,53,.9)]  focus:ring-2 focus:ring-[rgba(41,235,23,0.5)] 
+            className={`text-white mt-[10px] bg-[#40C335] hover:bg-[rgba(64,195,53,.9)] focus:ring-2 focus:ring-[rgba(41,235,23,0.5)] 
               ${
                 submitting
                   ? "bg-slate-100 cursor-not-allowed text-slate-200 opacity-70"
@@ -189,7 +194,7 @@ const Input = styled("input", {
 });
 
 const Button = styled("button", {
-  all: "unset",
+  // all: "unset",
   boxSizing: "border-box",
   display: "inline-flex",
   alignItems: "center",

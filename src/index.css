@@ -144,6 +144,10 @@ body {
   @apply text-accent underline
 }
 
+.sheet-link {
+  @apply border-b border-dashed dark:border-slate-500 border-slate-300 pb-2 flex items-center gap-1 hover:text-accent
+}
+
 .footer-links {
   @apply hover:underline hover:opacity-90 px-1
 }
@@ -186,8 +190,8 @@ body {
 }
 
 #skills-section {
-  background-image: url(./assets/bg-graphic.png);
   background-position: center center;
+  background-size: 25px;
 }
 
 #card-grid {
@@ -211,14 +215,3 @@ body {
 }
 
 @media (prefers-color-scheme:dark) {}
-
-@layer components {
-
-  .form-input {
-    /* prettier-ignore */
-    @apply text-[#71717a] border-b dark:border-[#3f3f46] border-slate-400/30 bg-transparent outline-none 
-    dark:hover:border-[rgba(64,195,53,.5)] dark:focus:border-[rgba(64,195,53,.8)] dark:selection:bg-[rgba(64,195,53,.5)]
-    dark:selection:text-white hover:border-[rgba(64,195,53,.5)] focus:border-[rgba(64,195,53,.8)] selection:bg-[rgba(64,195,53,.5)] 
-    selection:text-white
-  }
-}

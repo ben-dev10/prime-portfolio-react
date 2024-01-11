@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+
+@layer components {
+    .form-input {
+        @apply text-[#71717a] border-b dark:border-[#3f3f46] border-slate-400/30 bg-transparent outline-none dark:hover:border-[rgba(64,195,53,.5)] dark:focus:border-[rgba(64,195,53,.8)] dark:selection:bg-[rgba(64,195,53,.5)] dark:selection:text-white hover:border-[rgba(64,195,53,.5)] focus:border-[rgba(64,195,53,.8)] selection:bg-[rgba(64,195,53,.5)] selection:text-white
+    }
+}

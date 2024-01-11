@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles, Layout, Package, ChevronRight } from "lucide-react";
+import {
+  Sparkles,
+  Layout,
+  Package,
+  ChevronRight,
+  ArrowRight,
+} from "lucide-react";
 import noise from "../assets/noise-01.png";
 import pic1 from "../assets/carousel/tasker-1.png";
 import pic2 from "../assets/carousel/cps-1.png";
@@ -72,15 +78,15 @@ function Intro() {
       <div className="wrapper p-4 container-4xl py-10">
         <div className="box-content max-w-[600px] mx-auto">
           <div className="sm:pl-[60px]">
-            <h2 className="h3 text-secondary mb-2 ">
+            <h2 className="h3 text-secondary mb-2">
               Expect nothing but world-class service in{" "}
-              <span className="text-accent">web development</span>.
+              <span className="text-accent">web development</span>
             </h2>
             <div>
               {/* FIXME: Find a better word animation */}
               <h3 className="mb-3 h3 text-slate-500">
-                Let's get your <WordAnimation />{" "}
-                <span className="ml-[74px]"> website online</span>.
+                <span className="mr-1">Let's get your</span> <WordAnimation />{" "}
+                <span className="ml-[76px]"> website online</span>.
               </h3>
               <p className="mt-2">
                 The process always starts by addressing a few requirements and
@@ -121,9 +127,9 @@ function Intro() {
   );
 }
 
-function HeaderPill({ text }: {text:string}) {
+function HeaderPill({ text }: { text: string }) {
   return (
-    <div className="rounded-full text-[11px] text-accent border border-[rgba(64,195,53,.3)] max-w-max px-3 py-[2px]">
+    <div className="rounded-full text-[11px] text-accent border dark:border-[rgba(64,195,53,.3)] border-[rgba(64,195,53,.5)] max-w-max px-3 py-[2px]">
       {text}
     </div>
   );
@@ -170,7 +176,9 @@ function Showcase() {
           <h3 className="h3 mt-5 dark:text-white text-slate-950 ">
             Selected projects
           </h3>
-          <p className="">Here are some of my recent works. </p>
+          <p className="text-slate-400 dark:text-primary">
+            These are some of my recent works.{" "}
+          </p>
         </div>
       </div>
       <div className="carousel-wrapper mt-5 w-full pb-10 flex lg:justify-center overflow-x-auto p-5 pt-2 gap-3">
@@ -193,13 +201,21 @@ function Showcase() {
           siteUrl="https://ben-dev10.github.io/tasker/"
         />
       </div>
+      <div className="w-full flex justify-center p-2 py-4">
+        <Link
+          to={"/projects"}
+          className="flex items-center gap-[3px] text-[rgba(64,195,53,.8)] hover:underline"
+        >
+          See all projects <ArrowRight size={13} />{" "}
+        </Link>
+      </div>
     </div>
   );
 }
 
 function SkillsPill({ text }: { text: string }) {
   return (
-    <div className="bg-[rgba(64,195,53,.5)] rounded-full max-w-max px-3 py-1 border border-accent text-white">
+    <div className="bg-[rgba(64,195,53,1)] dark:bg-[rgba(64,195,53,.5)]  rounded-full max-w-max px-3 py-1 border border-accent text-white">
       {text}
     </div>
   );
@@ -207,12 +223,15 @@ function SkillsPill({ text }: { text: string }) {
 
 function Skills() {
   return (
-    <div className="" id="skills-section">
+    <div
+      className="dark:[background-image:url(./assets/bgs/x-x--d.svg)] [background-image:url(./assets/bgs/x-x--l.svg)]"
+      id="skills-section"
+    >
       <div className="wrapper container-4xl p-4">
         <div className="flex flex-col items-center">
           <HeaderPill text="Skills" />
 
-          <h3 className="h3 mt-3 text-white">Skillset</h3>
+          <h3 className="h3 mt-3 dark:text-white text-black">Skillset</h3>
         </div>
 
         <div className="py-5 flex justify-center gap-2 flex-wrap mb-5">
@@ -263,7 +282,7 @@ function AboutMeCard() {
   const year = new Date();
   const age: number = 2002;
   return (
-    <div className="about-me-card flex flex-col shadow-lg rounded-xl dark:bg-[#0c0d0d] bg-slate-100 max-w-[500px] mx-auto h-[350px]">
+    <div className="about-me-card flex flex-col shadow-lg rounded-xl dark:bg-[#0c0d0d] bg-slate-100 max-w-[450px] mx-auto h-[350px]">
       <div
         className="header p-3 px-5 rounded-tl-xl rounded-tr-xl"
         id="card-header"
@@ -277,7 +296,7 @@ function AboutMeCard() {
             <img
               src={img2}
               alt="avatar img"
-              className="size-[40px] rounded-full border"
+              className="size-[40px] rounded-full border-2"
             />
           </div>
 

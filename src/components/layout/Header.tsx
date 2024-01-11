@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Download, Sun } from "lucide-react";
 import { SheetUI } from "../ui-2/sheetui";
 import { Button } from "../ui/button";
 import cv from "../../assets/resume/resume-v1.pdf";
 import { motion } from "framer-motion";
-
 
 // Updates theme
 document.addEventListener("DOMContentLoaded", function () {
@@ -65,12 +64,30 @@ function Logo() {
 function Links() {
   return (
     <div className="space-x-3 dark:text-slate-50 hidden md:block">
-      <Link to={"/"} className="hover:underline">
+      <NavLink
+        to={`/`}
+        className={({ isActive, isPending }) =>
+          isActive ? "text-accent" : isPending ? "pending" : ""
+        }
+      >
         Home
-      </Link>
-      <Link to={"/about"} className="hover:underline">
+      </NavLink>
+      <NavLink
+        to={`/about/`}
+        className={({ isActive, isPending }) =>
+          isActive ? "text-accent" : isPending ? "pending" : ""
+        }
+      >
         About
-      </Link>
+      </NavLink>
+      <NavLink
+        to={`/projects/`}
+        className={({ isActive, isPending }) =>
+          isActive ? "text-accent" : isPending ? "pending" : ""
+        }
+      >
+        Projects
+      </NavLink>
     </div>
   );
 }

@@ -13,8 +13,8 @@ import ErrorPage from "./routes/ErrorPage.tsx";
 import About from "./routes/About.tsx";
 import "./index.css";
 import NoMatch from "./routes/NoMatch.tsx";
+import Projects from "./routes/Projects.tsx";
 
-// dotenv.config();
 
 const router = createHashRouter(
   createRoutesFromElements(
@@ -22,6 +22,7 @@ const router = createHashRouter(
       <Route errorElement={<ErrorPage />}>
         <Route index element={<Home />} />
         <Route path="/about/" element={<About />} />
+        <Route path="/projects/" element={<Projects />} />
 
         <Route path="*" element={<NoMatch />} />
       </Route>
